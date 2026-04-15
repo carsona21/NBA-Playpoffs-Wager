@@ -319,6 +319,73 @@ h2 {
   padding: 18px;
 }
 
+.result-controls,
+.results-admin__grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field--checkbox {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.field__label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.field__input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font: inherit;
+}
+
+.field__input:focus {
+  outline: 2px solid rgba(89, 225, 255, 0.35);
+  border-color: rgba(89, 225, 255, 0.45);
+}
+
+.results-admin {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  padding: 18px;
+}
+
+.results-admin__heading h3 {
+  font-size: 1.7rem;
+}
+
+.text-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--cyan);
+  font: inherit;
+  cursor: pointer;
+}
+
+.text-button:hover {
+  text-decoration: underline;
+}
+
+.legend--tight {
+  margin-top: 16px;
+}
+
 .result-card__top,
 .bonus-card__top,
 .participant-card__top {

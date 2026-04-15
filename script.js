@@ -21,32 +21,32 @@ const DATA = {
   },
   actualResults: {
     round1: [
-      { id: "r1-east-1", label: "East 1", matchup: "(1) Detroit vs. (8) TBD", winner: null, games: null, complete: false, schedule: "Game 1: Sunday, April 19 at 6:30 ET" },
-      { id: "r1-east-2", label: "East 2", matchup: "(2) Boston vs. (7) TBD", winner: null, games: null, complete: false, schedule: "Game 1: Sunday, April 19 at 1:00 ET" },
-      { id: "r1-east-3", label: "East 3", matchup: "(3) New York vs. (6) Atlanta", winner: null, games: null, complete: false, schedule: "Game 1: Saturday, April 18 at 6:00 ET" },
-      { id: "r1-east-4", label: "East 4", matchup: "(4) Cleveland vs. (5) Toronto", winner: null, games: null, complete: false, schedule: "Game 1: Saturday, April 18 at 1:00 ET" },
-      { id: "r1-west-1", label: "West 1", matchup: "(1) Oklahoma City vs. (8) TBD", winner: null, games: null, complete: false, schedule: "Game 1: Sunday, April 19 at 3:30 ET" },
-      { id: "r1-west-2", label: "West 2", matchup: "(2) San Antonio vs. (7) TBD", winner: null, games: null, complete: false, schedule: "Game 1: Sunday, April 19 at 9:00 ET" },
-      { id: "r1-west-3", label: "West 3", matchup: "(3) Denver vs. (6) Minnesota", winner: null, games: null, complete: false, schedule: "Game 1: Saturday, April 18 at 3:30 ET" },
-      { id: "r1-west-4", label: "West 4", matchup: "(4) Los Angeles vs. (5) Houston", winner: null, games: null, complete: false, schedule: "Game 1: Saturday, April 18 at 8:30 ET" }
+      { id: "r1-east-1", label: "East 1", matchup: "(1) Detroit vs. (8) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 6:30 ET" },
+      { id: "r1-east-2", label: "East 2", matchup: "(2) Boston vs. (7) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 1:00 ET" },
+      { id: "r1-east-3", label: "East 3", matchup: "(3) New York vs. (6) Atlanta", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 6:00 ET" },
+      { id: "r1-east-4", label: "East 4", matchup: "(4) Cleveland vs. (5) Toronto", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 1:00 ET" },
+      { id: "r1-west-1", label: "West 1", matchup: "(1) Oklahoma City vs. (8) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 3:30 ET" },
+      { id: "r1-west-2", label: "West 2", matchup: "(2) San Antonio vs. (7) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 9:00 ET" },
+      { id: "r1-west-3", label: "West 3", matchup: "(3) Denver vs. (6) Minnesota", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 3:30 ET" },
+      { id: "r1-west-4", label: "West 4", matchup: "(4) Los Angeles vs. (5) Houston", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 8:30 ET" }
     ],
     round2: [
-      { id: "r2-east-1", label: "East Semis 1", matchup: "Winner East 1 vs. Winner East 4", winner: null, games: null, complete: false, schedule: "TBD after First Round" },
-      { id: "r2-east-2", label: "East Semis 2", matchup: "Winner East 2 vs. Winner East 3", winner: null, games: null, complete: false, schedule: "TBD after First Round" },
-      { id: "r2-west-1", label: "West Semis 1", matchup: "Winner West 1 vs. Winner West 4", winner: null, games: null, complete: false, schedule: "TBD after First Round" },
-      { id: "r2-west-2", label: "West Semis 2", matchup: "Winner West 2 vs. Winner West 3", winner: null, games: null, complete: false, schedule: "TBD after First Round" }
+      { id: "r2-east-1", label: "East Semis 1", matchup: "Winner East 1 vs. Winner East 4", winner: "", games: "", complete: false, schedule: "TBD after First Round" },
+      { id: "r2-east-2", label: "East Semis 2", matchup: "Winner East 2 vs. Winner East 3", winner: "", games: "", complete: false, schedule: "TBD after First Round" },
+      { id: "r2-west-1", label: "West Semis 1", matchup: "Winner West 1 vs. Winner West 4", winner: "", games: "", complete: false, schedule: "TBD after First Round" },
+      { id: "r2-west-2", label: "West Semis 2", matchup: "Winner West 2 vs. Winner West 3", winner: "", games: "", complete: false, schedule: "TBD after First Round" }
     ],
     conferenceFinals: [
-      { id: "cf-east", label: "East Finals", matchup: "East Semis winners", winner: null, games: null, complete: false, schedule: "TBD after Conference Semifinals" },
-      { id: "cf-west", label: "West Finals", matchup: "West Semis winners", winner: null, games: null, complete: false, schedule: "TBD after Conference Semifinals" }
+      { id: "cf-east", label: "East Finals", matchup: "East Semis winners", winner: "", games: "", complete: false, schedule: "TBD after Conference Semifinals" },
+      { id: "cf-west", label: "West Finals", matchup: "West Semis winners", winner: "", games: "", complete: false, schedule: "TBD after Conference Semifinals" }
     ],
     finals: [
-      { id: "finals", label: "NBA Finals", matchup: "Eastern Conference champion vs. Western Conference champion", winner: null, games: null, complete: false, schedule: "Game 1: June 3 at 8:30 ET" }
+      { id: "finals", label: "NBA Finals", matchup: "Eastern Conference champion vs. Western Conference champion", winner: "", games: "", complete: false, schedule: "Game 1: June 3 at 8:30 ET" }
     ],
     bonus: {
-      champion: null,
-      finalsMvp: null,
-      finalsGames: null
+      champion: "",
+      finalsMvp: "",
+      finalsGames: ""
     }
   },
   participants: [
@@ -218,7 +218,30 @@ const DATA = {
   ]
 };
 
-const STORAGE_KEY = "nba-playoff-pool:selected-player";
+const PLAYER_STORAGE_KEY = "nba-playoff-pool:selected-player";
+const RESULTS_STORAGE_KEY = "nba-playoff-pool:results";
+
+const appState = {
+  actualResults: loadStoredResults()
+};
+
+function loadStoredResults() {
+  const stored = window.localStorage.getItem(RESULTS_STORAGE_KEY);
+
+  if (!stored) {
+    return structuredClone(DATA.actualResults);
+  }
+
+  try {
+    return { ...structuredClone(DATA.actualResults), ...JSON.parse(stored) };
+  } catch {
+    return structuredClone(DATA.actualResults);
+  }
+}
+
+function saveResults() {
+  window.localStorage.setItem(RESULTS_STORAGE_KEY, JSON.stringify(appState.actualResults));
+}
 
 function buildResultsLookup(actualResults) {
   const lookup = {};
@@ -238,7 +261,6 @@ function scoreParticipant(participant, resultsLookup) {
   let correctChampion = false;
   let correctFinalsMvp = false;
   let finalsGamesDistance = null;
-
   const roundBreakdown = {};
 
   Object.entries(SCORING.rounds).forEach(([roundKey, config]) => {
@@ -256,7 +278,7 @@ function scoreParticipant(participant, resultsLookup) {
         roundPoints += config.points;
         correctSeries += 1;
 
-        if (pick.games === actual.games) {
+        if (Number(pick.games) === Number(actual.games)) {
           roundPoints += SCORING.exactSeriesBonus;
           exactSeries += 1;
           exactSeriesCount += 1;
@@ -268,7 +290,7 @@ function scoreParticipant(participant, resultsLookup) {
     roundBreakdown[roundKey] = { roundPoints, correctSeries, exactSeries };
   });
 
-  const actualBonus = DATA.actualResults.bonus;
+  const actualBonus = appState.actualResults.bonus;
   if (actualBonus.champion) {
     correctChampion = participant.bonus.champion === actualBonus.champion;
     if (correctChampion) {
@@ -283,9 +305,9 @@ function scoreParticipant(participant, resultsLookup) {
     }
   }
 
-  if (typeof actualBonus.finalsGames === "number") {
-    finalsGamesDistance = Math.abs(participant.bonus.finalsGames - actualBonus.finalsGames);
-    if (participant.bonus.finalsGames === actualBonus.finalsGames) {
+  if (actualBonus.finalsGames !== "") {
+    finalsGamesDistance = Math.abs(Number(participant.bonus.finalsGames) - Number(actualBonus.finalsGames));
+    if (Number(participant.bonus.finalsGames) === Number(actualBonus.finalsGames)) {
       totalPoints += SCORING.finalsBonus.finalsGames;
     }
   }
@@ -302,7 +324,7 @@ function scoreParticipant(participant, resultsLookup) {
 }
 
 function rankParticipants(participants) {
-  const resultsLookup = buildResultsLookup(DATA.actualResults);
+  const resultsLookup = buildResultsLookup(appState.actualResults);
 
   return participants
     .map((participant) => scoreParticipant(participant, resultsLookup))
@@ -346,7 +368,7 @@ function getSeriesStatus(pick, actual) {
   }
 
   if (pick.winner === actual.winner) {
-    return { label: pick.games === actual.games ? "Winner + Games" : "Winner Correct", className: "status--correct" };
+    return { label: Number(pick.games) === Number(actual.games) ? "Winner + Games" : "Winner Correct", className: "status--correct" };
   }
 
   return { label: "Missed", className: "status--incorrect" };
@@ -355,7 +377,7 @@ function getSeriesStatus(pick, actual) {
 function getSelectedPlayerName(participants) {
   const params = new URLSearchParams(window.location.search);
   const queryPlayer = params.get("player");
-  const storedPlayer = window.localStorage.getItem(STORAGE_KEY);
+  const storedPlayer = window.localStorage.getItem(PLAYER_STORAGE_KEY);
   const availableNames = participants.map((participant) => participant.name);
 
   if (queryPlayer && availableNames.includes(queryPlayer)) {
@@ -370,17 +392,23 @@ function getSelectedPlayerName(participants) {
 }
 
 function setSelectedPlayer(name) {
-  window.localStorage.setItem(STORAGE_KEY, name);
+  window.localStorage.setItem(PLAYER_STORAGE_KEY, name);
   const params = new URLSearchParams(window.location.search);
   params.set("player", name);
-  const nextUrl = `${window.location.pathname}?${params.toString()}`;
-  window.history.replaceState({}, "", nextUrl);
+  window.history.replaceState({}, "", `${window.location.pathname}?${params.toString()}`);
 }
 
 function buildPlayerHref(name) {
   const params = new URLSearchParams(window.location.search);
   params.set("player", name);
   return `?${params.toString()}#personal-view`;
+}
+
+function parseWinnerOptions(matchup) {
+  return matchup
+    .split(" vs. ")
+    .map((team) => team.replace(/\(\d+\)\s*/g, "").trim())
+    .filter((team) => team && team !== "TBD" && !team.toLowerCase().includes("winner") && !team.toLowerCase().includes("champion"));
 }
 
 function renderHero(standings, selectedParticipant) {
@@ -447,12 +475,73 @@ function renderLeaderboard(standings, selectedName) {
       ${rows}
     </div>
     <div class="legend">
-      <p>
-        Loose bracket scoring is active. Each round earns points on its own, so a missed early pick does not wipe out later rounds.
-      </p>
-      <p>
-        Click any player row to switch the page into that person's personalized view.
-      </p>
+      <p>Loose bracket scoring is active. Each round earns points on its own, so a missed early pick does not wipe out later rounds.</p>
+      <p>Click any player row to switch the page into that person's personalized view.</p>
+    </div>
+  `;
+}
+
+function renderSeriesControls(series, roundKey) {
+  const teamOptions = parseWinnerOptions(series.matchup);
+  const hasSimpleTeams = teamOptions.length === 2;
+
+  return `
+    <div class="result-controls">
+      <label class="field">
+        <span class="field__label">Winner</span>
+        ${hasSimpleTeams ? `
+          <select class="field__input" data-result-round="${roundKey}" data-result-id="${series.id}" data-result-field="winner">
+            <option value="">Select winner</option>
+            ${teamOptions.map((team) => `<option value="${team}" ${series.winner === team ? "selected" : ""}>${team}</option>`).join("")}
+          </select>
+        ` : `
+          <input class="field__input" type="text" placeholder="Enter winner" value="${series.winner}" data-result-round="${roundKey}" data-result-id="${series.id}" data-result-field="winner">
+        `}
+      </label>
+      <label class="field">
+        <span class="field__label">Games</span>
+        <select class="field__input" data-result-round="${roundKey}" data-result-id="${series.id}" data-result-field="games">
+          <option value="">Series length</option>
+          ${[4, 5, 6, 7].map((games) => `<option value="${games}" ${Number(series.games) === games ? "selected" : ""}>${games}</option>`).join("")}
+        </select>
+      </label>
+      <label class="field field--checkbox">
+        <input type="checkbox" ${series.complete ? "checked" : ""} data-result-round="${roundKey}" data-result-id="${series.id}" data-result-field="complete">
+        <span class="field__label">Mark final</span>
+      </label>
+    </div>
+  `;
+}
+
+function renderBonusControls() {
+  const bonus = appState.actualResults.bonus;
+
+  return `
+    <div class="results-admin">
+      <div class="results-admin__heading">
+        <p class="eyebrow">On-Site Controls</p>
+        <h3>Finals Bonus Results</h3>
+      </div>
+      <div class="results-admin__grid">
+        <label class="field">
+          <span class="field__label">Champion</span>
+          <input class="field__input" type="text" placeholder="Enter champion" value="${bonus.champion}" data-bonus-field="champion">
+        </label>
+        <label class="field">
+          <span class="field__label">Finals MVP</span>
+          <input class="field__input" type="text" placeholder="Enter Finals MVP" value="${bonus.finalsMvp}" data-bonus-field="finalsMvp">
+        </label>
+        <label class="field">
+          <span class="field__label">Finals Games</span>
+          <select class="field__input" data-bonus-field="finalsGames">
+            <option value="">Total games</option>
+            ${[4, 5, 6, 7].map((games) => `<option value="${games}" ${Number(bonus.finalsGames) === games ? "selected" : ""}>${games}</option>`).join("")}
+          </select>
+        </label>
+      </div>
+      <div class="legend legend--tight">
+        <p>These updates save in this browser automatically, so you can manage the pool on the page instead of editing code.</p>
+      </div>
     </div>
   `;
 }
@@ -462,7 +551,7 @@ function renderResults() {
   const cards = [];
 
   Object.entries(SCORING.rounds).forEach(([roundKey, config]) => {
-    DATA.actualResults[roundKey].forEach((series) => {
+    appState.actualResults[roundKey].forEach((series) => {
       cards.push(`
         <article class="result-card">
           <div class="result-card__top">
@@ -470,13 +559,12 @@ function renderResults() {
               <p class="eyebrow">${config.label}</p>
               <h3>${series.label}</h3>
             </div>
-            <span class="chip ${series.complete ? "chip--complete" : "chip--pending"}">
-              ${series.complete ? "Final" : "Pending"}
-            </span>
+            <span class="chip ${series.complete ? "chip--complete" : "chip--pending"}">${series.complete ? "Final" : "Pending"}</span>
           </div>
           <p class="result-winner">${series.matchup}</p>
           <p class="result-meta">${series.winner ? `Winner: ${series.winner}` : series.schedule}</p>
           <p class="result-meta">${series.games ? `${series.games} games` : "Series result not entered yet"}</p>
+          ${renderSeriesControls(series, roundKey)}
         </article>
       `);
     });
@@ -484,10 +572,10 @@ function renderResults() {
 
   container.innerHTML = `
     ${cards.join("")}
+    ${renderBonusControls()}
     <div class="legend">
-      <p>
-        ${DATA.source.updatedLabel}. Source: <a href="${DATA.source.officialScheduleUrl}" target="_blank" rel="noreferrer">NBA playoff schedule</a>.
-      </p>
+      <p>${DATA.source.updatedLabel}. Source: <a href="${DATA.source.officialScheduleUrl}" target="_blank" rel="noreferrer">NBA playoff schedule</a>.</p>
+      <p><button class="text-button" type="button" data-reset-results="true">Reset all entered results</button></p>
     </div>
   `;
 }
@@ -496,8 +584,8 @@ function renderBonusItem(label, pick, actual) {
   let statusLabel = "Pending";
   let className = "status--pending";
 
-  if (actual !== null) {
-    if (pick === actual) {
+  if (actual !== "") {
+    if (String(pick) === String(actual)) {
       statusLabel = "Correct";
       className = "status--correct";
     } else {
@@ -519,7 +607,7 @@ function renderBonusItem(label, pick, actual) {
 
 function renderBonus(participant) {
   const container = document.getElementById("bonus-grid");
-  const actualBonus = DATA.actualResults.bonus;
+  const actualBonus = appState.actualResults.bonus;
 
   if (!participant) {
     container.innerHTML = `<p class="empty-state">Choose a participant to see their bonus picks.</p>`;
@@ -546,7 +634,7 @@ function renderBonus(participant) {
 
 function renderParticipants(participant) {
   const container = document.getElementById("participants");
-  const resultsLookup = buildResultsLookup(DATA.actualResults);
+  const resultsLookup = buildResultsLookup(appState.actualResults);
 
   if (!participant) {
     container.innerHTML = `<p class="empty-state">Choose a participant to see their bracket picks.</p>`;
@@ -590,30 +678,11 @@ function renderParticipants(participant) {
   `;
 }
 
-function attachParticipantSelection(standings) {
-  document.addEventListener("click", (event) => {
-    const trigger = event.target.closest("[data-select-player], [data-player-name]");
-    if (!trigger) {
-      return;
-    }
-
-    event.preventDefault();
-
-    const nextName = trigger.dataset.selectPlayer || trigger.dataset.playerName;
-    const currentName = window.localStorage.getItem(STORAGE_KEY);
-
-    if (!nextName || nextName === currentName) {
-      return;
-    }
-
-    renderApp(standings, nextName);
-  });
-}
-
-function renderApp(standings, selectedName) {
-  setSelectedPlayer(selectedName);
+function renderApp(selectedName) {
+  const standings = rankParticipants(DATA.participants);
   const selectedParticipant = standings.find((participant) => participant.name === selectedName) ?? standings[0];
 
+  setSelectedPlayer(selectedParticipant.name);
   renderHero(standings, selectedParticipant);
   renderLeaderboard(standings, selectedParticipant.name);
   renderParticipantSelector(standings, selectedParticipant.name);
@@ -622,12 +691,64 @@ function renderApp(standings, selectedName) {
   renderParticipants(selectedParticipant);
 }
 
-function init() {
-  const standings = rankParticipants(DATA.participants);
-  const selectedName = getSelectedPlayerName(standings);
+function attachEvents() {
+  document.addEventListener("click", (event) => {
+    const playerTrigger = event.target.closest("[data-select-player], [data-player-name]");
+    if (playerTrigger) {
+      event.preventDefault();
+      const nextName = playerTrigger.dataset.selectPlayer || playerTrigger.dataset.playerName;
+      if (nextName) {
+        renderApp(nextName);
+      }
+      return;
+    }
 
-  attachParticipantSelection(standings);
-  renderApp(standings, selectedName);
+    const resetTrigger = event.target.closest("[data-reset-results]");
+    if (resetTrigger) {
+      window.localStorage.removeItem(RESULTS_STORAGE_KEY);
+      appState.actualResults = structuredClone(DATA.actualResults);
+      renderApp(getSelectedPlayerName(DATA.participants));
+    }
+  });
+
+  document.addEventListener("change", (event) => {
+    const resultField = event.target.closest("[data-result-field]");
+    if (resultField) {
+      const roundKey = resultField.dataset.resultRound;
+      const seriesId = resultField.dataset.resultId;
+      const field = resultField.dataset.resultField;
+      const series = appState.actualResults[roundKey].find((entry) => entry.id === seriesId);
+
+      if (!series) {
+        return;
+      }
+
+      if (field === "complete") {
+        series.complete = resultField.checked;
+      } else if (field === "games") {
+        series.games = resultField.value === "" ? "" : Number(resultField.value);
+      } else {
+        series[field] = resultField.value;
+      }
+
+      saveResults();
+      renderApp(getSelectedPlayerName(DATA.participants));
+      return;
+    }
+
+    const bonusField = event.target.closest("[data-bonus-field]");
+    if (bonusField) {
+      const field = bonusField.dataset.bonusField;
+      appState.actualResults.bonus[field] = field === "finalsGames" && bonusField.value !== "" ? Number(bonusField.value) : bonusField.value;
+      saveResults();
+      renderApp(getSelectedPlayerName(DATA.participants));
+    }
+  });
+}
+
+function init() {
+  attachEvents();
+  renderApp(getSelectedPlayerName(DATA.participants));
 }
 
 init();
