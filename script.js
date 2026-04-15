@@ -14,29 +14,34 @@ const SCORING = {
 };
 
 const DATA = {
+  source: {
+    officialPlayoffsUrl: "https://www.nba.com/playoffs/2026",
+    officialScheduleUrl: "https://www.nba.com/news/2026-nba-playoffs-schedule",
+    updatedLabel: "Official NBA.com playoff schedule, updated April 13, 2026"
+  },
   actualResults: {
     round1: [
-      { id: "r1-east-1", label: "East 1", winner: "Celtics", games: null, complete: false },
-      { id: "r1-east-2", label: "East 2", winner: "Knicks", games: null, complete: false },
-      { id: "r1-east-3", label: "East 3", winner: "Bucks", games: null, complete: false },
-      { id: "r1-east-4", label: "East 4", winner: "Cavaliers", games: null, complete: false },
-      { id: "r1-west-1", label: "West 1", winner: "Thunder", games: null, complete: false },
-      { id: "r1-west-2", label: "West 2", winner: "Nuggets", games: null, complete: false },
-      { id: "r1-west-3", label: "West 3", winner: "Timberwolves", games: null, complete: false },
-      { id: "r1-west-4", label: "West 4", winner: "Clippers", games: null, complete: false }
+      { id: "r1-east-1", label: "East 1", matchup: "(1) Detroit vs. (8) TBD", winner: null, games: null, complete: false, schedule: "Game 1: Sunday, April 19 at 6:30 ET" },
+      { id: "r1-east-2", label: "East 2", matchup: "(2) Boston vs. (7) TBD", winner: null, games: null, complete: false, schedule: "Game 1: Sunday, April 19 at 1:00 ET" },
+      { id: "r1-east-3", label: "East 3", matchup: "(3) New York vs. (6) Atlanta", winner: null, games: null, complete: false, schedule: "Game 1: Saturday, April 18 at 6:00 ET" },
+      { id: "r1-east-4", label: "East 4", matchup: "(4) Cleveland vs. (5) Toronto", winner: null, games: null, complete: false, schedule: "Game 1: Saturday, April 18 at 1:00 ET" },
+      { id: "r1-west-1", label: "West 1", matchup: "(1) Oklahoma City vs. (8) TBD", winner: null, games: null, complete: false, schedule: "Game 1: Sunday, April 19 at 3:30 ET" },
+      { id: "r1-west-2", label: "West 2", matchup: "(2) San Antonio vs. (7) TBD", winner: null, games: null, complete: false, schedule: "Game 1: Sunday, April 19 at 9:00 ET" },
+      { id: "r1-west-3", label: "West 3", matchup: "(3) Denver vs. (6) Minnesota", winner: null, games: null, complete: false, schedule: "Game 1: Saturday, April 18 at 3:30 ET" },
+      { id: "r1-west-4", label: "West 4", matchup: "(4) Los Angeles vs. (5) Houston", winner: null, games: null, complete: false, schedule: "Game 1: Saturday, April 18 at 8:30 ET" }
     ],
     round2: [
-      { id: "r2-east-1", label: "East Semis 1", winner: "Celtics", games: null, complete: false },
-      { id: "r2-east-2", label: "East Semis 2", winner: "Bucks", games: null, complete: false },
-      { id: "r2-west-1", label: "West Semis 1", winner: "Thunder", games: null, complete: false },
-      { id: "r2-west-2", label: "West Semis 2", winner: "Nuggets", games: null, complete: false }
+      { id: "r2-east-1", label: "East Semis 1", matchup: "Winner East 1 vs. Winner East 4", winner: null, games: null, complete: false, schedule: "TBD after First Round" },
+      { id: "r2-east-2", label: "East Semis 2", matchup: "Winner East 2 vs. Winner East 3", winner: null, games: null, complete: false, schedule: "TBD after First Round" },
+      { id: "r2-west-1", label: "West Semis 1", matchup: "Winner West 1 vs. Winner West 4", winner: null, games: null, complete: false, schedule: "TBD after First Round" },
+      { id: "r2-west-2", label: "West Semis 2", matchup: "Winner West 2 vs. Winner West 3", winner: null, games: null, complete: false, schedule: "TBD after First Round" }
     ],
     conferenceFinals: [
-      { id: "cf-east", label: "East Finals", winner: "Celtics", games: null, complete: false },
-      { id: "cf-west", label: "West Finals", winner: "Thunder", games: null, complete: false }
+      { id: "cf-east", label: "East Finals", matchup: "East Semis winners", winner: null, games: null, complete: false, schedule: "TBD after Conference Semifinals" },
+      { id: "cf-west", label: "West Finals", matchup: "West Semis winners", winner: null, games: null, complete: false, schedule: "TBD after Conference Semifinals" }
     ],
     finals: [
-      { id: "finals", label: "NBA Finals", winner: "Celtics", games: null, complete: false }
+      { id: "finals", label: "NBA Finals", matchup: "Eastern Conference champion vs. Western Conference champion", winner: null, games: null, complete: false, schedule: "Game 1: June 3 at 8:30 ET" }
     ],
     bonus: {
       champion: null,
@@ -46,67 +51,67 @@ const DATA = {
   },
   participants: [
     {
-      name: "Alex",
+      name: "Lincoln",
       picks: {
         round1: [
-          { id: "r1-east-1", winner: "Celtics", games: 5 },
-          { id: "r1-east-2", winner: "Knicks", games: 6 },
-          { id: "r1-east-3", winner: "Bucks", games: 6 },
-          { id: "r1-east-4", winner: "Cavaliers", games: 7 },
-          { id: "r1-west-1", winner: "Thunder", games: 5 },
-          { id: "r1-west-2", winner: "Nuggets", games: 6 },
-          { id: "r1-west-3", winner: "Timberwolves", games: 7 },
-          { id: "r1-west-4", winner: "Clippers", games: 6 }
+          { id: "r1-east-1", winner: "Boston", games: 5 },
+          { id: "r1-east-2", winner: "New York", games: 6 },
+          { id: "r1-east-3", winner: "Toronto", games: 6 },
+          { id: "r1-east-4", winner: "Cleveland", games: 7 },
+          { id: "r1-west-1", winner: "Oklahoma City", games: 5 },
+          { id: "r1-west-2", winner: "Denver", games: 6 },
+          { id: "r1-west-3", winner: "Minnesota", games: 7 },
+          { id: "r1-west-4", winner: "Los Angeles", games: 6 }
         ],
         round2: [
-          { id: "r2-east-1", winner: "Celtics", games: 6 },
-          { id: "r2-east-2", winner: "Bucks", games: 7 },
-          { id: "r2-west-1", winner: "Thunder", games: 7 },
-          { id: "r2-west-2", winner: "Nuggets", games: 6 }
+          { id: "r2-east-1", winner: "Boston", games: 6 },
+          { id: "r2-east-2", winner: "Toronto", games: 7 },
+          { id: "r2-west-1", winner: "Oklahoma City", games: 7 },
+          { id: "r2-west-2", winner: "Denver", games: 6 }
         ],
         conferenceFinals: [
-          { id: "cf-east", winner: "Celtics", games: 6 },
-          { id: "cf-west", winner: "Thunder", games: 7 }
+          { id: "cf-east", winner: "Boston", games: 6 },
+          { id: "cf-west", winner: "Oklahoma City", games: 7 }
         ],
         finals: [
-          { id: "finals", winner: "Celtics", games: 6 }
+          { id: "finals", winner: "Boston", games: 6 }
         ]
       },
       bonus: {
-        champion: "Celtics",
+        champion: "Boston",
         finalsMvp: "Jayson Tatum",
         finalsGames: 6
       }
     },
     {
-      name: "Jordan",
+      name: "Mason",
       picks: {
         round1: [
-          { id: "r1-east-1", winner: "Celtics", games: 4 },
-          { id: "r1-east-2", winner: "Knicks", games: 7 },
-          { id: "r1-east-3", winner: "Pacers", games: 7 },
-          { id: "r1-east-4", winner: "Magic", games: 6 },
-          { id: "r1-west-1", winner: "Thunder", games: 6 },
-          { id: "r1-west-2", winner: "Nuggets", games: 7 },
-          { id: "r1-west-3", winner: "Suns", games: 7 },
-          { id: "r1-west-4", winner: "Clippers", games: 7 }
+          { id: "r1-east-1", winner: "Boston", games: 4 },
+          { id: "r1-east-2", winner: "New York", games: 7 },
+          { id: "r1-east-3", winner: "Toronto", games: 7 },
+          { id: "r1-east-4", winner: "Atlanta", games: 6 },
+          { id: "r1-west-1", winner: "Oklahoma City", games: 6 },
+          { id: "r1-west-2", winner: "Denver", games: 7 },
+          { id: "r1-west-3", winner: "Houston", games: 7 },
+          { id: "r1-west-4", winner: "Los Angeles", games: 7 }
         ],
         round2: [
-          { id: "r2-east-1", winner: "Celtics", games: 5 },
-          { id: "r2-east-2", winner: "Pacers", games: 6 },
-          { id: "r2-west-1", winner: "Thunder", games: 6 },
-          { id: "r2-west-2", winner: "Clippers", games: 7 }
+          { id: "r2-east-1", winner: "Boston", games: 5 },
+          { id: "r2-east-2", winner: "Toronto", games: 6 },
+          { id: "r2-west-1", winner: "Oklahoma City", games: 6 },
+          { id: "r2-west-2", winner: "Los Angeles", games: 7 }
         ],
         conferenceFinals: [
-          { id: "cf-east", winner: "Celtics", games: 5 },
-          { id: "cf-west", winner: "Thunder", games: 6 }
+          { id: "cf-east", winner: "Boston", games: 5 },
+          { id: "cf-west", winner: "Oklahoma City", games: 6 }
         ],
         finals: [
-          { id: "finals", winner: "Thunder", games: 7 }
+          { id: "finals", winner: "Oklahoma City", games: 7 }
         ]
       },
       bonus: {
-        champion: "Thunder",
+        champion: "Oklahoma City",
         finalsMvp: "Shai Gilgeous-Alexander",
         finalsGames: 7
       }
@@ -115,33 +120,99 @@ const DATA = {
       name: "Sam",
       picks: {
         round1: [
-          { id: "r1-east-1", winner: "Celtics", games: 5 },
-          { id: "r1-east-2", winner: "76ers", games: 7 },
-          { id: "r1-east-3", winner: "Bucks", games: 5 },
-          { id: "r1-east-4", winner: "Cavaliers", games: 6 },
-          { id: "r1-west-1", winner: "Thunder", games: 4 },
-          { id: "r1-west-2", winner: "Lakers", games: 7 },
-          { id: "r1-west-3", winner: "Timberwolves", games: 6 },
-          { id: "r1-west-4", winner: "Mavericks", games: 7 }
+          { id: "r1-east-1", winner: "Boston", games: 5 },
+          { id: "r1-east-2", winner: "Philadelphia", games: 7 },
+          { id: "r1-east-3", winner: "Toronto", games: 5 },
+          { id: "r1-east-4", winner: "Cleveland", games: 6 },
+          { id: "r1-west-1", winner: "Oklahoma City", games: 4 },
+          { id: "r1-west-2", winner: "Los Angeles", games: 7 },
+          { id: "r1-west-3", winner: "Minnesota", games: 6 },
+          { id: "r1-west-4", winner: "Houston", games: 7 }
         ],
         round2: [
-          { id: "r2-east-1", winner: "Celtics", games: 6 },
-          { id: "r2-east-2", winner: "Bucks", games: 6 },
-          { id: "r2-west-1", winner: "Thunder", games: 6 },
-          { id: "r2-west-2", winner: "Timberwolves", games: 7 }
+          { id: "r2-east-1", winner: "Boston", games: 6 },
+          { id: "r2-east-2", winner: "Toronto", games: 6 },
+          { id: "r2-west-1", winner: "Oklahoma City", games: 6 },
+          { id: "r2-west-2", winner: "Minnesota", games: 7 }
         ],
         conferenceFinals: [
-          { id: "cf-east", winner: "Bucks", games: 7 },
-          { id: "cf-west", winner: "Thunder", games: 7 }
+          { id: "cf-east", winner: "Toronto", games: 7 },
+          { id: "cf-west", winner: "Oklahoma City", games: 7 }
         ],
         finals: [
-          { id: "finals", winner: "Thunder", games: 6 }
+          { id: "finals", winner: "Oklahoma City", games: 6 }
         ]
       },
       bonus: {
-        champion: "Thunder",
+        champion: "Oklahoma City",
         finalsMvp: "Shai Gilgeous-Alexander",
         finalsGames: 6
+      }
+    },
+    {
+      name: "Carson",
+      picks: {
+        round1: [
+          { id: "r1-east-1", winner: "Detroit", games: 6 },
+          { id: "r1-east-2", winner: "Boston", games: 5 },
+          { id: "r1-east-3", winner: "New York", games: 6 },
+          { id: "r1-east-4", winner: "Cleveland", games: 7 },
+          { id: "r1-west-1", winner: "Oklahoma City", games: 5 },
+          { id: "r1-west-2", winner: "San Antonio", games: 6 },
+          { id: "r1-west-3", winner: "Denver", games: 7 },
+          { id: "r1-west-4", winner: "Houston", games: 7 }
+        ],
+        round2: [
+          { id: "r2-east-1", winner: "Detroit", games: 7 },
+          { id: "r2-east-2", winner: "Boston", games: 6 },
+          { id: "r2-west-1", winner: "Oklahoma City", games: 6 },
+          { id: "r2-west-2", winner: "San Antonio", games: 7 }
+        ],
+        conferenceFinals: [
+          { id: "cf-east", winner: "Boston", games: 6 },
+          { id: "cf-west", winner: "Oklahoma City", games: 6 }
+        ],
+        finals: [
+          { id: "finals", winner: "Oklahoma City", games: 6 }
+        ]
+      },
+      bonus: {
+        champion: "Oklahoma City",
+        finalsMvp: "Shai Gilgeous-Alexander",
+        finalsGames: 6
+      }
+    },
+    {
+      name: "Gaza",
+      picks: {
+        round1: [
+          { id: "r1-east-1", winner: "Detroit", games: 5 },
+          { id: "r1-east-2", winner: "Boston", games: 4 },
+          { id: "r1-east-3", winner: "Atlanta", games: 7 },
+          { id: "r1-east-4", winner: "Toronto", games: 7 },
+          { id: "r1-west-1", winner: "Oklahoma City", games: 4 },
+          { id: "r1-west-2", winner: "San Antonio", games: 5 },
+          { id: "r1-west-3", winner: "Minnesota", games: 7 },
+          { id: "r1-west-4", winner: "Los Angeles", games: 6 }
+        ],
+        round2: [
+          { id: "r2-east-1", winner: "Detroit", games: 6 },
+          { id: "r2-east-2", winner: "Atlanta", games: 7 },
+          { id: "r2-west-1", winner: "Oklahoma City", games: 5 },
+          { id: "r2-west-2", winner: "Minnesota", games: 7 }
+        ],
+        conferenceFinals: [
+          { id: "cf-east", winner: "Detroit", games: 7 },
+          { id: "cf-west", winner: "Oklahoma City", games: 6 }
+        ],
+        finals: [
+          { id: "finals", winner: "Detroit", games: 7 }
+        ]
+      },
+      bonus: {
+        champion: "Detroit",
+        finalsMvp: "Cade Cunningham",
+        finalsGames: 7
       }
     }
   ]
@@ -335,7 +406,7 @@ function renderParticipantSelector(standings, selectedName) {
   container.innerHTML = standings.map((participant) => `
     <button class="participant-pill ${participant.name === selectedName ? "is-active" : ""}" type="button" data-select-player="${participant.name}">
       <span class="participant-pill__name">${participant.name}</span>
-      <span class="participant-pill__meta">Rank #${participant.rank} • ${participant.totalPoints} pts</span>
+      <span class="participant-pill__meta">Rank #${participant.rank} | ${participant.totalPoints} pts</span>
     </button>
   `).join("");
 }
@@ -373,6 +444,9 @@ function renderLeaderboard(standings, selectedName) {
       <p>
         Loose bracket scoring is active. Each round earns points on its own, so a missed early pick does not wipe out later rounds.
       </p>
+      <p>
+        Click any player row to switch the page into that person's personalized view.
+      </p>
     </div>
   `;
 }
@@ -394,14 +468,22 @@ function renderResults() {
               ${series.complete ? "Final" : "Pending"}
             </span>
           </div>
-          <p class="result-winner">${series.winner || "TBD"}</p>
-          <p class="result-meta">${series.games ? `${series.games} games` : "Series length not entered yet"}</p>
+          <p class="result-winner">${series.matchup}</p>
+          <p class="result-meta">${series.winner ? `Winner: ${series.winner}` : series.schedule}</p>
+          <p class="result-meta">${series.games ? `${series.games} games` : "Series result not entered yet"}</p>
         </article>
       `);
     });
   });
 
-  container.innerHTML = cards.join("");
+  container.innerHTML = `
+    ${cards.join("")}
+    <div class="legend">
+      <p>
+        ${DATA.source.updatedLabel}. Source: <a href="${DATA.source.officialScheduleUrl}" target="_blank" rel="noreferrer">NBA playoff schedule</a>.
+      </p>
+    </div>
+  `;
 }
 
 function renderBonusItem(label, pick, actual) {
@@ -488,8 +570,8 @@ function renderParticipants(participant) {
               return `
                 <div class="pick-item">
                   <div>
-                    <div class="pick-item__label">${actual ? actual.label : pick.id}: ${pick.winner}</div>
-                    <div class="pick-item__meta">Predicted in ${pick.games} games</div>
+                    <div class="pick-item__label">${actual ? actual.matchup : pick.id}</div>
+                    <div class="pick-item__meta">${pick.winner} in ${pick.games} games</div>
                   </div>
                   <span class="status ${status.className}">${status.label}</span>
                 </div>
@@ -502,16 +584,21 @@ function renderParticipants(participant) {
   `;
 }
 
-function attachParticipantSelection(standings, selectedName) {
-  document.querySelectorAll("[data-select-player], [data-player-name]").forEach((element) => {
-    element.addEventListener("click", () => {
-      const nextName = element.dataset.selectPlayer || element.dataset.playerName;
-      if (!nextName || nextName === selectedName) {
-        return;
-      }
+function attachParticipantSelection(standings) {
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-select-player], [data-player-name]");
+    if (!trigger) {
+      return;
+    }
 
-      renderApp(standings, nextName);
-    });
+    const nextName = trigger.dataset.selectPlayer || trigger.dataset.playerName;
+    const currentName = window.localStorage.getItem(STORAGE_KEY);
+
+    if (!nextName || nextName === currentName) {
+      return;
+    }
+
+    renderApp(standings, nextName);
   });
 }
 
@@ -520,18 +607,18 @@ function renderApp(standings, selectedName) {
   const selectedParticipant = standings.find((participant) => participant.name === selectedName) ?? standings[0];
 
   renderHero(standings, selectedParticipant);
-  renderLeaderboard(standings, selectedParticipant?.name);
-  renderParticipantSelector(standings, selectedParticipant?.name);
+  renderLeaderboard(standings, selectedParticipant.name);
+  renderParticipantSelector(standings, selectedParticipant.name);
   renderResults();
   renderBonus(selectedParticipant);
   renderParticipants(selectedParticipant);
-  attachParticipantSelection(standings, selectedParticipant?.name);
 }
 
 function init() {
   const standings = rankParticipants(DATA.participants);
   const selectedName = getSelectedPlayerName(standings);
 
+  attachParticipantSelection(standings);
   renderApp(standings, selectedName);
 }
 
