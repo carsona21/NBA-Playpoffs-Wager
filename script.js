@@ -377,6 +377,12 @@ function setSelectedPlayer(name) {
   window.history.replaceState({}, "", nextUrl);
 }
 
+function buildPlayerHref(name) {
+  const params = new URLSearchParams(window.location.search);
+  params.set("player", name);
+  return `?${params.toString()}#personal-view`;
+}
+
 function renderHero(standings, selectedParticipant) {
   const [leader, runnerUp] = standings;
   const container = document.getElementById("hero-scoreboard");
@@ -404,10 +410,10 @@ function renderParticipantSelector(standings, selectedName) {
   const container = document.getElementById("participant-selector");
 
   container.innerHTML = standings.map((participant) => `
-    <button class="participant-pill ${participant.name === selectedName ? "is-active" : ""}" type="button" data-select-player="${participant.name}">
+    <a class="participant-pill ${participant.name === selectedName ? "is-active" : ""}" href="${buildPlayerHref(participant.name)}" data-select-player="${participant.name}">
       <span class="participant-pill__name">${participant.name}</span>
       <span class="participant-pill__meta">Rank #${participant.rank} | ${participant.totalPoints} pts</span>
-    </button>
+    </a>
   `).join("");
 }
 
@@ -415,7 +421,7 @@ function renderLeaderboard(standings, selectedName) {
   const container = document.getElementById("leaderboard");
 
   const rows = standings.map((participant) => `
-    <div class="leaderboard-row ${participant.rank === 1 ? "leaderboard-row--top" : ""} ${participant.name === selectedName ? "leaderboard-row--selected" : ""}" data-player-name="${participant.name}">
+    <a class="leaderboard-row leaderboard-link ${participant.rank === 1 ? "leaderboard-row--top" : ""} ${participant.name === selectedName ? "leaderboard-row--selected" : ""}" href="${buildPlayerHref(participant.name)}" data-player-name="${participant.name}">
       <div class="rank">#${participant.rank}</div>
       <div>
         <div class="player-name">${participant.name}</div>
@@ -425,7 +431,7 @@ function renderLeaderboard(standings, selectedName) {
       <div class="score-cell"><strong>${participant.roundBreakdown.round1.roundPoints}</strong>R1</div>
       <div class="score-cell"><strong>${participant.roundBreakdown.round2.roundPoints}</strong>R2</div>
       <div class="score-cell"><strong>${participant.roundBreakdown.conferenceFinals.roundPoints + participant.roundBreakdown.finals.roundPoints}</strong>Late</div>
-    </div>
+    </a>
   `).join("");
 
   container.innerHTML = `
@@ -590,6 +596,8 @@ function attachParticipantSelection(standings) {
     if (!trigger) {
       return;
     }
+
+    event.preventDefault();
 
     const nextName = trigger.dataset.selectPlayer || trigger.dataset.playerName;
     const currentName = window.localStorage.getItem(STORAGE_KEY);
