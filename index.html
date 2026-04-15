@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA Playoff Pool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">Friend Group Pool</p>
+        <h1>NBA Playoff Wager Tracker</h1>
+        <p class="hero__text">
+          Live standings, full bracket picks, and loose-bracket scoring in one easy-to-update GitHub Pages site.
+        </p>
+      </div>
+
+      <div class="hero__scoreboard" id="hero-scoreboard"></div>
+    </header>
+
+    <main class="layout">
+      <section class="panel panel--leaderboard">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Live Standings</p>
+            <h2>Leaderboard</h2>
+          </div>
+          <p class="section-note">Tiebreakers: exact series, champion, Finals MVP, Finals games</p>
+        </div>
+        <div id="leaderboard"></div>
+      </section>
+
+      <section class="panel panel--selector">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Personal View</p>
+            <h2>Choose Your Name</h2>
+          </div>
+          <p class="section-note">Your choice stays saved in the browser so each person can come back to their own view.</p>
+        </div>
+        <div id="participant-selector" class="participant-selector"></div>
+      </section>
+
+      <section class="panel panel--results">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Manual Update Area</p>
+            <h2>Official Results</h2>
+          </div>
+          <p class="section-note">Edit results in <code>script.js</code> as each series finishes.</p>
+        </div>
+        <div id="results-grid" class="results-grid"></div>
+      </section>
+
+      <section class="panel panel--bonus">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Your Bonus Picks</p>
+            <h2>Personal Finals Tracker</h2>
+          </div>
+          <p class="section-note">This area switches to the selected participant and updates as final bonus results become official.</p>
+        </div>
+        <div id="bonus-grid" class="bonus-grid"></div>
+      </section>
+
+      <section class="panel panel--picks">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Your Bracket View</p>
+            <h2>Personalized Picks</h2>
+          </div>
+          <p class="section-note">Click a name once, or share a direct player link so people land on their own bracket view.</p>
+        </div>
+        <div id="participants" class="participants"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
