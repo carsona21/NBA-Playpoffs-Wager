@@ -35,4 +35,4 @@ Edit `DATA` inside `script.js`:
 - Champion pick: +5
 - Finals MVP: +5
 - Finals games prediction: +3
-- Loose bracket scoring: later rounds score independently of earlier misses
+- Hard bracket scoring: later rounds only score if the earlier bracket path stayed correct

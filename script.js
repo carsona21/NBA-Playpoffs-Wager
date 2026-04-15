@@ -21,27 +21,27 @@ const DATA = {
   },
   actualResults: {
     round1: [
-      { id: "r1-east-1", label: "East 1", matchup: "(1) Detroit vs. (8) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 6:30 ET" },
-      { id: "r1-east-2", label: "East 2", matchup: "(2) Boston vs. (7) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 1:00 ET" },
-      { id: "r1-east-3", label: "East 3", matchup: "(3) New York vs. (6) Atlanta", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 6:00 ET" },
-      { id: "r1-east-4", label: "East 4", matchup: "(4) Cleveland vs. (5) Toronto", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 1:00 ET" },
-      { id: "r1-west-1", label: "West 1", matchup: "(1) Oklahoma City vs. (8) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 3:30 ET" },
-      { id: "r1-west-2", label: "West 2", matchup: "(2) San Antonio vs. (7) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 9:00 ET" },
-      { id: "r1-west-3", label: "West 3", matchup: "(3) Denver vs. (6) Minnesota", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 3:30 ET" },
-      { id: "r1-west-4", label: "West 4", matchup: "(4) Los Angeles vs. (5) Houston", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 8:30 ET" }
+      { id: "r1-east-1", label: "East 1", matchup: "(1) Detroit vs. (8) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 6:30 ET", dependsOn: [] },
+      { id: "r1-east-2", label: "East 2", matchup: "(2) Boston vs. (7) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 1:00 ET", dependsOn: [] },
+      { id: "r1-east-3", label: "East 3", matchup: "(3) New York vs. (6) Atlanta", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 6:00 ET", dependsOn: [] },
+      { id: "r1-east-4", label: "East 4", matchup: "(4) Cleveland vs. (5) Toronto", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 1:00 ET", dependsOn: [] },
+      { id: "r1-west-1", label: "West 1", matchup: "(1) Oklahoma City vs. (8) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 3:30 ET", dependsOn: [] },
+      { id: "r1-west-2", label: "West 2", matchup: "(2) San Antonio vs. (7) TBD", winner: "", games: "", complete: false, schedule: "Game 1: Sunday, April 19 at 9:00 ET", dependsOn: [] },
+      { id: "r1-west-3", label: "West 3", matchup: "(3) Denver vs. (6) Minnesota", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 3:30 ET", dependsOn: [] },
+      { id: "r1-west-4", label: "West 4", matchup: "(4) Los Angeles vs. (5) Houston", winner: "", games: "", complete: false, schedule: "Game 1: Saturday, April 18 at 8:30 ET", dependsOn: [] }
     ],
     round2: [
-      { id: "r2-east-1", label: "East Semis 1", matchup: "Winner East 1 vs. Winner East 4", winner: "", games: "", complete: false, schedule: "TBD after First Round" },
-      { id: "r2-east-2", label: "East Semis 2", matchup: "Winner East 2 vs. Winner East 3", winner: "", games: "", complete: false, schedule: "TBD after First Round" },
-      { id: "r2-west-1", label: "West Semis 1", matchup: "Winner West 1 vs. Winner West 4", winner: "", games: "", complete: false, schedule: "TBD after First Round" },
-      { id: "r2-west-2", label: "West Semis 2", matchup: "Winner West 2 vs. Winner West 3", winner: "", games: "", complete: false, schedule: "TBD after First Round" }
+      { id: "r2-east-1", label: "East Semis 1", matchup: "Winner East 1 vs. Winner East 4", winner: "", games: "", complete: false, schedule: "TBD after First Round", dependsOn: ["r1-east-1", "r1-east-4"] },
+      { id: "r2-east-2", label: "East Semis 2", matchup: "Winner East 2 vs. Winner East 3", winner: "", games: "", complete: false, schedule: "TBD after First Round", dependsOn: ["r1-east-2", "r1-east-3"] },
+      { id: "r2-west-1", label: "West Semis 1", matchup: "Winner West 1 vs. Winner West 4", winner: "", games: "", complete: false, schedule: "TBD after First Round", dependsOn: ["r1-west-1", "r1-west-4"] },
+      { id: "r2-west-2", label: "West Semis 2", matchup: "Winner West 2 vs. Winner West 3", winner: "", games: "", complete: false, schedule: "TBD after First Round", dependsOn: ["r1-west-2", "r1-west-3"] }
     ],
     conferenceFinals: [
-      { id: "cf-east", label: "East Finals", matchup: "East Semis winners", winner: "", games: "", complete: false, schedule: "TBD after Conference Semifinals" },
-      { id: "cf-west", label: "West Finals", matchup: "West Semis winners", winner: "", games: "", complete: false, schedule: "TBD after Conference Semifinals" }
+      { id: "cf-east", label: "East Finals", matchup: "East Semis winners", winner: "", games: "", complete: false, schedule: "TBD after Conference Semifinals", dependsOn: ["r2-east-1", "r2-east-2"] },
+      { id: "cf-west", label: "West Finals", matchup: "West Semis winners", winner: "", games: "", complete: false, schedule: "TBD after Conference Semifinals", dependsOn: ["r2-west-1", "r2-west-2"] }
     ],
     finals: [
-      { id: "finals", label: "NBA Finals", matchup: "Eastern Conference champion vs. Western Conference champion", winner: "", games: "", complete: false, schedule: "Game 1: June 3 at 8:30 ET" }
+      { id: "finals", label: "NBA Finals", matchup: "Eastern Conference champion vs. Western Conference champion", winner: "", games: "", complete: false, schedule: "Game 1: June 3 at 8:30 ET", dependsOn: ["cf-east", "cf-west"] }
     ],
     bonus: {
       champion: "",
@@ -287,6 +287,33 @@ function buildResultsLookup(actualResults) {
   return lookup;
 }
 
+function findParticipantPick(participant, seriesId) {
+  return Object.keys(participant.picks)
+    .flatMap((roundKey) => participant.picks[roundKey])
+    .find((pick) => pick.id === seriesId);
+}
+
+function teamIsAliveInBracket(participant, resultsLookup, seriesId, team) {
+  const series = resultsLookup[seriesId];
+  if (!series) {
+    return false;
+  }
+
+  if (!series.dependsOn || series.dependsOn.length === 0) {
+    const pick = findParticipantPick(participant, seriesId);
+    return pick ? pick.winner === team : false;
+  }
+
+  return series.dependsOn.some((dependencyId) => {
+    const dependencyPick = findParticipantPick(participant, dependencyId);
+    if (!dependencyPick || dependencyPick.winner !== team) {
+      return false;
+    }
+
+    return teamIsAliveInBracket(participant, resultsLookup, dependencyId, team);
+  });
+}
+
 function scoreParticipant(participant, resultsLookup) {
   let totalPoints = 0;
   let exactSeriesCount = 0;
@@ -306,7 +333,9 @@ function scoreParticipant(participant, resultsLookup) {
         return;
       }
 
-      if (pick.winner === actual.winner) {
+      const pathIsValid = !actual.dependsOn || actual.dependsOn.length === 0 || teamIsAliveInBracket(participant, resultsLookup, pick.id, actual.winner);
+
+      if (pick.winner === actual.winner && pathIsValid) {
         roundPoints += config.points;
         correctSeries += 1;
 
@@ -512,7 +541,7 @@ function renderLeaderboard(standings, selectedName) {
       ${rows}
     </div>
     <div class="legend">
-      <p>Loose bracket scoring is active. Each round earns points on its own, so a missed early pick does not wipe out later rounds.</p>
+      <p>Hard bracket scoring is active. Later rounds only score if that team stayed alive in the player's bracket path.</p>
       <p>Click any player row to switch the page into that person's personalized view.</p>
     </div>
   `;
