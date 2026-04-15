@@ -221,26 +221,58 @@ const DATA = {
 const PLAYER_STORAGE_KEY = "nba-playoff-pool:selected-player";
 const RESULTS_STORAGE_KEY = "nba-playoff-pool:results";
 
+function cloneData(value) {
+  if (typeof structuredClone === "function") {
+    return structuredClone(value);
+  }
+
+  return JSON.parse(JSON.stringify(value));
+}
+
+function safeStorageGet(key) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function safeStorageSet(key, value) {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // Ignore storage failures and keep the app usable in-memory.
+  }
+}
+
+function safeStorageRemove(key) {
+  try {
+    window.localStorage.removeItem(key);
+  } catch {
+    // Ignore storage failures and keep the app usable in-memory.
+  }
+}
+
 const appState = {
   actualResults: loadStoredResults()
 };
 
 function loadStoredResults() {
-  const stored = window.localStorage.getItem(RESULTS_STORAGE_KEY);
+  const stored = safeStorageGet(RESULTS_STORAGE_KEY);
 
   if (!stored) {
-    return structuredClone(DATA.actualResults);
+    return cloneData(DATA.actualResults);
   }
 
   try {
-    return { ...structuredClone(DATA.actualResults), ...JSON.parse(stored) };
+    return { ...cloneData(DATA.actualResults), ...JSON.parse(stored) };
   } catch {
-    return structuredClone(DATA.actualResults);
+    return cloneData(DATA.actualResults);
   }
 }
 
 function saveResults() {
-  window.localStorage.setItem(RESULTS_STORAGE_KEY, JSON.stringify(appState.actualResults));
+  safeStorageSet(RESULTS_STORAGE_KEY, JSON.stringify(appState.actualResults));
 }
 
 function buildResultsLookup(actualResults) {
@@ -377,7 +409,7 @@ function getSeriesStatus(pick, actual) {
 function getSelectedPlayerName(participants) {
   const params = new URLSearchParams(window.location.search);
   const queryPlayer = params.get("player");
-  const storedPlayer = window.localStorage.getItem(PLAYER_STORAGE_KEY);
+  const storedPlayer = safeStorageGet(PLAYER_STORAGE_KEY);
   const availableNames = participants.map((participant) => participant.name);
 
   if (queryPlayer && availableNames.includes(queryPlayer)) {
@@ -392,10 +424,15 @@ function getSelectedPlayerName(participants) {
 }
 
 function setSelectedPlayer(name) {
-  window.localStorage.setItem(PLAYER_STORAGE_KEY, name);
+  safeStorageSet(PLAYER_STORAGE_KEY, name);
   const params = new URLSearchParams(window.location.search);
   params.set("player", name);
-  window.history.replaceState({}, "", `${window.location.pathname}?${params.toString()}`);
+
+  try {
+    window.history.replaceState({}, "", `${window.location.pathname}?${params.toString()}`);
+  } catch {
+    // Ignore history update failures on restrictive local file contexts.
+  }
 }
 
 function buildPlayerHref(name) {
@@ -705,8 +742,8 @@ function attachEvents() {
 
     const resetTrigger = event.target.closest("[data-reset-results]");
     if (resetTrigger) {
-      window.localStorage.removeItem(RESULTS_STORAGE_KEY);
-      appState.actualResults = structuredClone(DATA.actualResults);
+      safeStorageRemove(RESULTS_STORAGE_KEY);
+      appState.actualResults = cloneData(DATA.actualResults);
       renderApp(getSelectedPlayerName(DATA.participants));
     }
   });
